@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FaturaController;
+use App\Http\Controllers\TweetController;
+
 
 
 /*
@@ -16,7 +17,6 @@ use App\Http\Controllers\FaturaController;
 */
 
 
+Route::get('/', [TweetController::class, 'index'])->name('tweet.index');
+Route::post('/create', [TweetController::class, 'create'])->name('create.tweet');
 
-Route::get('/fatura-olustur', [FaturaController::class, 'faturaOlustur']);
-Route::post('/fatura-olusturma-methodu', [FaturaController::class, 'faturaOlusturmaMethodu'])->name('fatura.olustur'); 
-Route::get('/fatura/{id}', [FaturaController::class, 'goster'])->name('fatura.goster'); 
