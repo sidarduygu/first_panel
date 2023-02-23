@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaturaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,6 @@ use App\Http\Controllers\DashboardController;
 
 
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/users', [DashboardController::class, 'users'])->name('page.users');
-Route::get('/dashboard/users-add', [DashboardController::class, 'userAdd'])->name('user.add');
-Route::get('/dashboard/users-edit/{id}', [DashboardController::class, 'userEdit'])->name('user.edit');
-Route::post('/dashboard/users-add-function', [DashboardController::class, 'userAddFunction'])->name('user.addFunction');
-Route::post('/dashboard/users-save-function', [DashboardController::class, 'userSaveFunction'])->name('user.saveFunction');
+Route::get('/fatura-olustur', [FaturaController::class, 'faturaOlustur']);
+Route::post('/fatura-olusturma-methodu', [FaturaController::class, 'faturaOlusturmaMethodu'])->name('fatura.olustur'); 
+Route::get('/fatura/{id}', [FaturaController::class, 'goster'])->name('fatura.goster'); 
