@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TweetController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -17,6 +19,9 @@ use App\Http\Controllers\TweetController;
 */
 
 
-Route::get('/', [TweetController::class, 'index'])->name('tweet.index');
-Route::post('/create', [TweetController::class, 'create'])->name('create.tweet');
+Route::get('/login', [AuthController::class, 'loginView']);
+Route::get('/register', [AuthController::class, 'registerView']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::resource('/dashboard/user', UserController::class);
+
 
