@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tweet extends Model
+class Product extends Model
 {
-    protected  $guarded = [];
-    
+    protected $guarded= [];
 }

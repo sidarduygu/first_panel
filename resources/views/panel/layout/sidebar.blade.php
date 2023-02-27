@@ -76,7 +76,7 @@
         </a>
       </li>
 
-   
+
 
       <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Pages</span>
@@ -87,11 +87,23 @@
           <div data-i18n="Basic">Users</div>
         </a>
       </li>
-     
-     
+      <li class="menu-item">
+        <a href="{{route('customer.index')}}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-user"></i>
+          <div data-i18n="Basic">Customer</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="{{route('product.index')}}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-box"></i>
+          <div data-i18n="Basic">Product</div>
+        </a>
+      </li>
+
+
       <!-- Components -->
       <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-    
+
       <!-- User interface -->
       <li class="menu-item">
         <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -197,7 +209,7 @@
         </ul>
       </li>
 
-  
+
       <!-- Forms & Tables -->
       <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
       <!-- Forms -->
@@ -237,8 +249,8 @@
           </li>
         </ul>
       </li>
-    
-     
+
+
     </ul>
   </aside>
 

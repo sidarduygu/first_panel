@@ -1,3 +1,4 @@
+
 @extends('panel.layout.app')
 @section('content')
 <div class="content-wrapper">
@@ -27,34 +28,25 @@
                         <small class="text-muted float-end"></small>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('user.update', $user->id)}}" method="post">
+                        <form action="{{route('customer.update', $customer->id)}}" method="post">
                             @csrf
                             @method('put')
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">email</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{$user->name}}" name="name" id="basic-default-name" />
+                                    <input type="text" class="form-control" value="{{$customer->email}}" name="email" id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">Email</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">password</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{$user->email}}" name="email" id="basic-default-company" />
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-email">Password</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group input-group-merge">
-                                        <input type="password" id="basic-default-email" value="{{$user->password}}" name="password"
-                                            class="form-control" />
-                                    </div>
+                                    <input type="text" class="form-control" value="{{$customer->password}}" name="password" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Status</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" value="{{$user->status}}" name="status" id="basic-default-name" />
+                                    <input type="number" class="form-control" value="{{$customer->status}}" name="status" id="basic-default-name" />
                                 </div>
                             </div>
 
