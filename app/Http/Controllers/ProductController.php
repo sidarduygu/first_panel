@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -36,7 +37,41 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'sku' => 'required',
+            'price' => 'required',
+            'weight' => 'required',
+            'descriptions' => 'required',
+            'thumbnail' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category' => 'required',
+            'stock' => 'required',
+          ]);
+
+          if ($validator->fails()) {
+            $messages = $validator->errors();
+            return redirect()->route('product.create')->withErrors($messages)->withInput();
+          }
+
+          $imageName = time().'.'.$request->image->extension();
+          $request->image->move(public_path('images'), $imageName);
+          $imageName = '/images/' . $imageName;
+          Product::create([
+            'name' => $request->name,
+            'sku' => $request->sku,
+            'price' => $request->price,
+            'weight' => $request->weight,
+            'descriptions' => $request->descriptions,
+            'thumbnail' => $request->thumbnail,
+            'image' => $imageName,
+            'category' => $request->category,
+            'stock' => $request->stock,
+
+          ]);
+
+         return redirect()->route('product.index');
     }
 
     /**
@@ -58,7 +93,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('panel.product.edit',['product' => $product]);
     }
 
     /**
@@ -70,7 +106,38 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $product = Product::find($id);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'sku' => 'required',
+            'price' => 'required',
+            'weight' => 'required',
+            'descriptions' => 'required',
+            'thumbnail' => 'required',
+            'category' => 'required',
+            'stock' => 'required',
+          ]);
+
+          if ($validator->fails()) {
+            $messages = $validator->errors();
+            return redirect()->route('product.create')->withErrors($messages)->withInput();
+          }
+
+
+                 $product->name = $request->name;
+                 $product->sku = $request->sku;
+                 $product->price = $request->price;
+                 $product->weight = $request->weight;
+                 $product->descriptions = $request->descriptions;
+                 $product->thumbnail = $request->thumbnail;
+                 $product->image = $request->image;
+                 $product->category = $request->category;
+                 $product->stock = $request->stock;
+                 $product->save();
+
+
+         return redirect()->route('product.index');
     }
 
     /**
@@ -81,6 +148,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        return redirect()->route('product.index');
     }
 }

@@ -16,25 +16,29 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                    <th>email</th>
-                    <th>password</th>
-                    <th>full_name</th>
-                    <th>billing_address</th>
-                    <th>default_shipping_address</th>
-                    <th>country</th>
-                    <th>phone</th>
+                    <th>sku</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>weight</th>
+                    <th>descriptions</th>
+                    <th>thumbnail</th>
+                    <th>image</th>
+                    <th>category</th>
+                    <th>stock</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($products as $product)
                 <tr>
-                  <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$product->email}}</strong></td>
-                  <td>{{$product->password}}</td>
-                  <td>{{$product->full_name}}</td>
-                  <td>{{$product->billing_address}}</td>
-                  <td>{{$product->default_shipping_address}}</td>
-                  <td>{{$product->country}}</td>
-                  <td>{{$product->phone}}</td>
+                  <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$product->sku}}</strong></td>
+                  <td>{{$product->name}}</td>
+                  <td><img src="{{$product->image}}"  class="w-75"  alt=""></td>
+                  <td>{{$product->price}}</td>
+                  <td>{{$product->weight}}</td>
+                  <td>{{$product->descriptions}}</td>
+                  <td>{{$product->thumbnail}}</td>
+                  <td>{{$product->category}}</td>
+                  <td>{{$product->stock}}</td>
                   <td>
                     <div class="dropdown">
                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

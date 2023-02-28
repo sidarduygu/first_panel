@@ -44,11 +44,35 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">Status</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">full_name</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" value="{{$customer->status}}" name="status" id="basic-default-name" />
+                                    <input type="number" class="form-control" value="{{$customer->full_name}}" name="full_name" id="basic-default-name" />
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">billing_address</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$customer->billing_address}}" name="billing_address" id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">default_shipping_address</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$customer->default_shipping_address}}" name="default_shipping_address" id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">country</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$customer->country}}" name="country" id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">phone</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$customer->phone}}" name="phone" id="basic-default-name" />
+                                </div>
+        
 
                             <div class="row justify-content-end">
                                 <div class="col-sm-10">

@@ -24,29 +24,65 @@
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="mb-0">Edit User</h5>
+                        <h5 class="mb-0">Edit product</h5>
                         <small class="text-muted float-end"></small>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('customer.update', $customer->id)}}" method="post">
+                        <form action="{{route('product.update', $product->id)}}" method="post">
                             @csrf
                             @method('put')
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">email</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">sku</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{$customer->email}}" name="email" id="basic-default-name" />
+                                    <input type="number" class="form-control" value="{{$product->sku}}" name="sku" id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">password</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="{{$customer->password}}" name="password" id="basic-default-company" />
+                                    <input type="text" class="form-control" value="{{$product->name}}" name="name" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">Status</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">price</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" value="{{$customer->status}}" name="status" id="basic-default-name" />
+                                    <input type="number" class="form-control" value="{{$product->price}}" name="price" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">weight</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$product->weight}}" name="weight" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">descriptions</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{{$product->descriptions}}" name="descriptions" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">thumbnail</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{{$product->thumbnail}}" name="thumbnail" id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">category</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$product->category}}" name="category" id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">stock</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" value="{{$product->stock}}" name="stock" id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">Image</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control" value="{{$product->Image}}" name="Image" id="basic-default-name" />
                                 </div>
                             </div>
 

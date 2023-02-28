@@ -23,58 +23,67 @@
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="mb-0">Create customer</h5>
+                        <h5 class="mb-0">Create product</h5>
                         <small class="text-muted float-end"></small>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('product.store')}}" method="post">
+                        <form action="{{route('product.store')}}" method="post"  enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">first_name</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">sku</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="first_name" id="basic-default-name" />
+                                    <input type="number" class="form-control" name="sku" id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">last_name</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="last_name" id="basic-default-company" />
+                                    <input type="text" class="form-control" name="name" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">phone</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">price</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="phone" id="basic-default-company" />
+                                    <input type="number" class="form-control" name="price" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">Email</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">weight</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email" id="basic-default-company" />
+                                    <input type="number" class="form-control" name="weight" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">street</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">descriptions</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="street" id="basic-default-company" />
+                                    <input type="text" class="form-control" name="descriptions"
+                                        id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">city</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">thumbnail</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="city" id="basic-default-company" />
+                                    <input type="text" class="form-control" name="thumbnail"
+                                        id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">state</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">category</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="state" id="basic-default-company" />
+                                    <input type="number" class="form-control" name="category"
+                                        id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">stock</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="stock" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">Image</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="file" id="formFile">
+                                    <input class="form-control" type="file" name="image" id="formFile">
                                 </div>
                             </div>
 

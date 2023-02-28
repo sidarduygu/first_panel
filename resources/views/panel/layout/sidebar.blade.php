@@ -99,6 +99,12 @@
           <div data-i18n="Basic">Product</div>
         </a>
       </li>
+      <li class="menu-item">
+        <a href="{{route('order.index')}}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-box"></i>
+          <div data-i18n="Basic">Order</div>
+        </a>
+      </li>
 
 
       <!-- Components -->

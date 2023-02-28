@@ -30,15 +30,39 @@
                         <form action="{{route('customer.store')}}" method="post">
                             @csrf
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">first_name</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">email</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="first_name" id="basic-default-name" />
+                                    <input type="text" class="form-control" name="email" id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">last_name</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">password</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="last_name" id="basic-default-company" />
+                                    <input type="text" class="form-control" name="password" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">full_name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="full_name" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">billing_address</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" name="billing_address" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">default_shipping_address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="default_shipping_address" id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">country</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="country" id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -47,36 +71,7 @@
                                     <input type="text" class="form-control" name="phone" id="basic-default-company" />
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email" id="basic-default-company" />
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">street</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="street" id="basic-default-company" />
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">city</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="city" id="basic-default-company" />
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">state</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="state" id="basic-default-company" />
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">zip_code</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="zip_code" id="basic-default-company" />
-                                </div>
-                            </div>
+
 
                             <div class="row justify-content-end">
                                 <div class="col-sm-10">
