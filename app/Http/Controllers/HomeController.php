@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
-        return view('frontend.index' , ['products' => $products]);
+        $products = Product::take(10)->get();
+        return view('frontend.index' , [
+            'products' => $products
+        ]);
     }
 }
